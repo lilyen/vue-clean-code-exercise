@@ -3,7 +3,12 @@ import {shallowMount} from "@vue/test-utils";
 
 describe("test birthday", ()=>{
     it("profileCaption not birthday", ()=>{
-        let wrapper = shallowMount(Header);
+        let wrapper = shallowMount(Header,
+            {
+                 methods: {
+                      getToday() { return new Date("2018-10-18") }
+                 }
+            });
         expect(wrapper.vm.profileCaption).toEqual('Jackson')
     })
     it("test birthday", () => {
