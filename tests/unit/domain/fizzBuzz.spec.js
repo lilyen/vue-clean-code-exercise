@@ -1,21 +1,20 @@
-//import fizzBuzz from '@/domain/fizzBuzz.vue'
 function passNum(num) {
-    if (num % 3 != 0 && num % 5 != 0) {
+    if (num % 3 !== 0 && num % 5 !== 0) {
         return num.toString();
     }
 
     var str = "";
-    if (num % 3 == 0) {
+    if (num % 3 === 0) {
         str += "fizz";
     }
-    if (num % 5 == 0) {
+    if (num % 5 === 0) {
         str += "buzz";
     }
     return str;
 }
 
 
-describe('fizzBuzzGame', () => {
+describe('fizzBuzz', () => {
     it('should return 1', () => {
         expect(passNum(1)).toEqual("1")
     })
