@@ -6,7 +6,7 @@ describe("test birthday", ()=>{
         let wrapper = shallowMount(Header,
             {
                  methods: {
-                      getToday() { return new Date("2018-10-18") }
+                      getToday() { return new Date("2018-09-18") }
                  }
             });
         expect(wrapper.vm.profileCaption).toEqual('Jackson')
