@@ -51,11 +51,7 @@
         this.$router.push('/budgets')
         },
       save() {
-          this.errors = AddBudget.save(this.budget, () => this._goToBudgetList());
-          //if (this.errors.month == '' && this.errors.amount=='') {
-          //    this._goToBudgetList()
-          //}
-          
+          this.errors = AddBudget.save(this.budget, () => this._goToBudgetList());          
       },
       cancel() {
         this._goToBudgetList()

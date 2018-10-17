@@ -1,7 +1,7 @@
 import Api from "../api"
 
 export default {
-    save(budget) {
+    save(budget, successDo) {
         let monthValid, amountValid;
         let errors = {
             month: '',
@@ -38,6 +38,7 @@ export default {
         } else {
             Api.addBudget(budget)
         }
+        successDo();
         return errors;
     }
 }
