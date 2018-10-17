@@ -20,8 +20,7 @@ describe("profile", () => {
     //})
     it("save call updateProfile use profile data", () => {
         let updateProfile = Api.updateProfile = jest.fn();
-        let wrapper = shallowMount(profile);
-        wrapper.vm.profile = {
+        let profileValue = {
             name: 'Lily',
             birthday: {
                 year: 1993,
@@ -29,16 +28,11 @@ describe("profile", () => {
                 day: 1,
             }
         };
+        let wrapper = shallowMount(profile);
+        wrapper.vm.profile = profileValue;
 
         wrapper.vm.save();
 
-        expect(updateProfile).toHaveBeenCalledWith({
-            name: 'Lily',
-            birthday: {
-                year: 1993,
-                month: 2,
-                day: 1,
-            }
-        });
+        expect(updateProfile).toHaveBeenCalledWith(profileValue);
     })
 })
